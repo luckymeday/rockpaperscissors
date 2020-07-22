@@ -21,7 +21,7 @@ export const getRoundOutcome = (user, computer) => {
     let result;
     // console.log(user, computer)
     if (user === "rock") {
-        result = computer === "Scissor" ? "Victory" : "Defeat"
+        result = computer === "Scissors" ? "Victory" : "Defeat"
     }
     if (user === "paper") {
         result = computer === "rock" ? "Victory" : "Defeat"
@@ -35,7 +35,7 @@ export const getRoundOutcome = (user, computer) => {
 
 export const getRandomChoice = () => {
     let choiceNames = Object.keys(CHOICES);//  오브젝트 키값만 떼다가 어레이로 만들어 준다 
-    //console.log("what?", choiceNames)
+    // console.log("what?", choiceNames)
 
     let randomIndex = Math.floor(Math.random() * 3);
     //console.log(randomIndex)
@@ -54,8 +54,8 @@ function App() {
     const [gameHistory, setGameHistory] = useState([]);
 
     const onPlayerChoose = playerChoice => {
-        console.log('playerChoice:', playerChoice)
-        //1. 유저가 뭘 선택했는지 안다 
+        // console.log('playerChoice:', playerChoice)
+        //1. 유저가 뭘 선택하는지 안다
         let userChoice = CHOICES[playerChoice]
 
         //2. 컴퓨터가 뭘 선택했는지 안다
@@ -85,7 +85,7 @@ function App() {
                 <div className="row mb-3">
                     <div className="col-md-8 themed-grid-col">
                         <ChoiceCard title="Computer" result={previousWinner} imgURL={comChoice && comChoice.url} />
-                        <h1>{prompt}</h1>
+                        {/* <h1>{prompt}</h1> */}
                         <div className="container">
                             <button className="btn btn-success btn-lg" onClick={() => onPlayerChoose("rock")}>
                                 Rock</button>

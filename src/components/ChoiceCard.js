@@ -9,7 +9,7 @@ export default function ChoiceCard(props) {
     let result = ''
     if (props.title === "Computer") {
         if (props.result === "Tie game") {
-            result = "Tie game!"
+            result = "Tie game"
         } else if (props.result === "Victory") {
             result = "Defeat"
         } else if (props.result === "Defeat") {
@@ -21,7 +21,7 @@ export default function ChoiceCard(props) {
         result = props.result
     }
 
-    console.log('props:', props)
+    // console.log('props:', props)
     return (
         <div className={`choice-card ${result}`}>
             <h1>{props.title}</h1>
